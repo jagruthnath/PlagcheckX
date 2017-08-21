@@ -9,7 +9,4 @@ for x in a:
     for y in b:
         if x==y:
             match+=1
-print(match)
-print(a)
-print(b)
-print(int((match/len(b))*100),"% match")
+print(int((match/(len(b)+len(a)))*100),"% match")
