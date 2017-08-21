@@ -1,14 +1,14 @@
-import tkinter.dialog
+import tkinter.filedialog
 import tkinter
 
 window = tkinter.Tk()
 window.minsize(width=500,height=300)
 
 def buttonCallBack():
-    window.file = tkinter.dialog.(initialdir="/", title="Select file",filetypes=(("Text files", "*.txt"), ("All files", "*.*")))
+    window.file = tkinter.filedialog.askopenfilename(initialdir="/", title="Select file",filetypes=(("Text files", "*.txt"), ("All files", "*.*")))
 
 def printCallBack():
-    print( sim*100 , "% match")\
+    print( sim*100 , "% match")
 
 t1=tkinter.Entry(window).grid(row=0,column=1)
 t2=tkinter.Entry(window).grid(row=1,column=1)
@@ -22,10 +22,10 @@ l2=tkinter.Label(window, text="File 2 : ").grid(row=1)
 
 b1.grid(row=0,column=2)
 b2.grid(row=1,column=2)
-
 b3.grid(row=2,column=1)
 
 window.mainloop()
+
 f1=open("Testfiles\/f1.py", "r")
 f2=open("Testfiles\/f2.py", "r")
 str=f1.read().lower()
