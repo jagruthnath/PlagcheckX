@@ -2,6 +2,7 @@ f1=open("Testfiles\/f1.py", "r")
 f2=open("Testfiles\/f2.py", "r")
 str=f1.read()
 str2=f2.read()
+print(str,str2)
 a=str.split()
 b=str2.split()
 match=0

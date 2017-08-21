@@ -1,5 +1,3 @@
-import math
-
 f1=open("Testfiles\/f1.py", "r")
 f2=open("Testfiles\/f2.py", "r")
 str=f1.read().lower()
