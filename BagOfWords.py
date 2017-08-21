@@ -1,18 +1,18 @@
-import tkinter.filedialog
+import tkinter.dialog
 import tkinter
-
+st=""
 window = tkinter.Tk()
 window.minsize(width=500,height=300)
-def helloCallBack():
-    window.file = tkinter.filedialog.askopenfilename(initialdir="/", title="Select file",filetypes=(("Text files", "*.txt"), ("All files", "*.*")))
-    st=window.file
-
+def buttonCallBack():
+    window.file = tkinter.dialog.(initialdir="/", title="Select file",filetypes=(("Text files", "*.txt"), ("All files", "*.*")))
+def printCallBack():
+    print( sim*100 , "% match")
 t1=tkinter.Entry(window).grid(row=0,column=1)
 t2=tkinter.Entry(window).grid(row=1,column=1)
 
-b1 = tkinter.Button(window, text ="Browse File 1 ...", command = helloCallBack)
-b2 = tkinter.Button(window, text ="Browse File 2 ...", command = helloCallBack)
-b3 = tkinter.Button(window, text ="Check for plagiarism", command = helloCallBack)
+b1 = tkinter.Button(window, text ="Browse File 1 ...", command = buttonCallBack)
+b2 = tkinter.Button(window, text ="Browse File 2 ...", command = buttonCallBack)
+b3 = tkinter.Button(window, text ="Check for plagiarism", command = printCallBack)
 
 l1=tkinter.Label(window, text="File 1 : ").grid(row=0)
 l2=tkinter.Label(window, text="File 2 : ").grid(row=1)
