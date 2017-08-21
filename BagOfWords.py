@@ -1,3 +1,17 @@
+import tkinter.filedialog
+import tkinter
+
+top = tkinter.Tk()
+top.minsize(width=500,height=300)
+def helloCallBack():
+    top.file = tkinter.filedialog.askopenfilename(initialdir="/", title="Select file",filetypes=(("Text files", "*.txt"), ("All files", "*.*")))
+    print(top.file)
+
+B = tkinter.Button(top, text ="Browse...", command = helloCallBack)
+
+B.pack()
+
+top.mainloop()
 f1=open("Testfiles\/f1.py", "r")
 f2=open("Testfiles\/f2.py", "r")
 str=f1.read().lower()
@@ -31,9 +45,7 @@ for x in d1:
 for x in d2:
     eu2 += d2[x]**2
 dp=0
-print(d1,d2)
 for x in d1:
     dp += ( d1[x] * d2[x] )
-    print(dp)
 sim = dp / ( eu1 * eu2 )
 print( sim*100 , "% match")
