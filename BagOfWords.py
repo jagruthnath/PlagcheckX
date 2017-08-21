@@ -1,17 +1,29 @@
 import tkinter.filedialog
 import tkinter
 
-top = tkinter.Tk()
-top.minsize(width=500,height=300)
+window = tkinter.Tk()
+window.minsize(width=500,height=300)
 def helloCallBack():
-    top.file = tkinter.filedialog.askopenfilename(initialdir="/", title="Select file",filetypes=(("Text files", "*.txt"), ("All files", "*.*")))
-    print(top.file)
+    window.file = tkinter.filedialog.askopenfilename(initialdir="/", title="Select file",filetypes=(("Text files", "*.txt"), ("All files", "*.*")))
+    st=window.file
 
-B = tkinter.Button(top, text ="Browse...", command = helloCallBack)
+t1=tkinter.Entry(window).grid(row=0,column=1)
+t2=tkinter.Entry(window).grid(row=1,column=1)
 
-B.pack()
+b1 = tkinter.Button(window, text ="Browse File 1 ...", command = helloCallBack)
+b2 = tkinter.Button(window, text ="Browse File 2 ...", command = helloCallBack)
+b3 = tkinter.Button(window, text ="Check for plagiarism", command = helloCallBack)
 
-top.mainloop()
+l1=tkinter.Label(window, text="File 1 : ").grid(row=0)
+l2=tkinter.Label(window, text="File 2 : ").grid(row=1)
+
+b1.grid(row=0,column=2)
+b2.grid(row=1,column=2)
+
+b3.grid(row=2,column=1)
+
+window.mainloop()
+
 f1=open("Testfiles\/f1.py", "r")
 f2=open("Testfiles\/f2.py", "r")
 str=f1.read().lower()
@@ -27,7 +39,6 @@ for x in a:
         s = x
     else:
         s=x[:-1]
-        print(s)
     d1[s] = a.count(x)
     d2[s] = 0
 for x in b:
