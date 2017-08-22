@@ -57,7 +57,6 @@ str=f1.read().lower()
 str2=f2.read().lower()
 a=str.split()
 b=str2.split()
-match=0
 s=""
 d1=freq(a,b)[0]
 d2=freq(a,b)[1]
