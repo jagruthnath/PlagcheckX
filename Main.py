@@ -1,5 +1,5 @@
-f1=open("Testfiles\/f1.py", "r")
-f2=open("Testfiles\/f2.py", "r")
+f1=open("Testfiles\/f1.txt", "r")
+f2=open("Testfiles\/f2.txt", "r")
 str=f1.read()
 str2=f2.read()
 print(str,str2)
@@ -9,5 +9,5 @@ match=0
 for x in a:
     for y in b:
         if x==y:
-            match+=1
-print(int((match/(len(b)+len(a)))*100),"% match")
+            match=len(x)
+print(int((match*2/(len(str)+len(str2)))*100),"% match")
