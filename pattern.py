@@ -37,6 +37,6 @@ p = input("Enter pattern : ")
 m = len(p)
 pos=kmp(t,p)
 if pos==-1:
-	print("Pattern not found!")
+	print("Pattern not found!!!")
 else:
 	print("Pattern found at position ",pos+1)
