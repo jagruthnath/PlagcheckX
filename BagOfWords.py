@@ -60,6 +60,7 @@ b=str2.split()
 s=""
 d1=freq(a,b)[0]
 d2=freq(a,b)[1]
+print(d1,d2)
 eu1=euclid(d1)
 eu2=euclid(d2)
 dp=0

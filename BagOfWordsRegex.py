@@ -27,9 +27,10 @@ for filename in glob.glob(os.path.join(path, '*.txt')):
     d=freq(a)
     eucl.append(euclid(d))
     l.append(d)
+#Dot product
 for i in range(1,len(l)):
     for j in l[i]:
         if j not in l[i-1]:
-            l[i - 1][j] = 0
+            pass
 print(l)
 print(eucl)
