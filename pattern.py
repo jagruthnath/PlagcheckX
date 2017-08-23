@@ -1,10 +1,12 @@
 import glob
 import os
+import re
 path = "Testfiles\/"
 a,st = [],[]
 nof=0
 for filename in glob.glob(os.path.join(path, '*.txt')):
     st.append(open(filename).read().lower())
+    st=re.sub(r'[^a-z0-9_\n]', '', st)
     a.append(st[nof].split())
     nof+=1
 
