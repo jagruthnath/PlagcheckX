@@ -1,24 +1,39 @@
 import glob
+import re
 import os
+
+lst = []
+directory = {}
+files = []
 path = "Testfiles\/"
-a,st = [],[]
-i=0
+
 for filename in glob.glob(os.path.join(path, '*.txt')):
-    st.append(open(filename).read().lower())
-    a.append(st[i].split())
-    i+=1
-print(i)
-print(st)
-print(a)
-match=0
-ar=[]
-
-for x in range(i):
-    for y in range(x+1,i):
-        for m in range(len(a[x])):
-            match = 0
-            for n in range(len(a[y])):
-                if a[x][m] == a[y][n]:
-                    print(x, m, "   ",y, n)
-
-#print(int((match*2/(len(str)+len(str2)))*100),"% match")
+    #File reading
+    f = open(filename,'r')
+    #st = re.sub(r'[^a-z0-9_\n]', '', f.read().lower())
+    st=f.read().lower()
+    f.close()
+    #Directory of files
+    file_name = filename.split('\\')
+    file=""
+    for i in file_name:
+        if path.find(i) == -1:
+            file += i
+    files.append(file)
+    directory[file] = st
+print(directory)
+def LCS(dct1, dct2):
+    a,b = dct1.split(),dct2.split()
+    match = 0
+    for x in a:
+        for y in b:
+            if x == y:
+                if match<len(x):
+                    match = len(x)
+    return int((match*2/(len(dct1)+len(dct2)))*100)
+for i in range(0,(len(files)-1)):
+    for j in range((i+1),len(files)):
+        try:
+            print("Plagiarism between ",files[i],"and ",files[j]," is: ",str(LCS(directory[files[i]],directory[files[j]])),"%")
+        except:
+            print(files[i]," and ",files[j]," are empty.")
