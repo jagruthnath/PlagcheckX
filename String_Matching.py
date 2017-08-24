@@ -1,25 +1,8 @@
-import glob
-import re
-import os
-lst = []
-directory = {}
-files = []
-path = "Testfiles\/"
-for filename in glob.glob(os.path.join(path, '*.txt')):
-    #File reading
-    f = open(filename,'r')
-    #st = re.sub(r'[^a-z0-9_\n]', '', f.read().lower())
-    st=f.read().lower()
-    f.close()
-    #Directory of files
-    file_name = filename.split('\\')
-    file=""
-    for i in file_name:
-        if path.find(i) == -1:
-            file += i
-    files.append(file)
-    directory[file] = st
-print(directory)
+import readFile
+readFile.read_file()
+files=readFile.files
+lst=readFile.lst
+directory=readFile.directory
 def LCS(dct1, dct2):
     a,b = dct1.split(),dct2.split()
     match = 0
