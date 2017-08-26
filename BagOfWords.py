@@ -51,8 +51,8 @@ def freq(a,b):
             d1[s] = 0
     return [d1,d2]
 pattern = '^\w+$'
-f1=open("Testfiles\/f1.py", "r")
-f2=open("Testfiles\/f2.py", "r")
+f1=open("Testfiles\/j2.txt", "r")
+f2=open("Testfiles\/j4.txt", "r")
 str=f1.read().lower()
 str2=f2.read().lower()
 a=str.split()

@@ -1,14 +1,20 @@
+#Read files from directory code start
 import readFile
 readFile.read_file()
 files=readFile.files
 lst=readFile.lst
 directory=readFile.directory
+#Read files from directory code end
+
+#Calculate Euclid function code start
 def euclid(arg):
     eucl=0
     for x in arg:
         eucl += arg[x] ** 2
-    return eucl
+    return eucl**0.5
+#Calculate Euclid function code end
 
+#Calculate Frequency of strings function code start
 def freq(a,b):
     d1,d2 = {},{}
     for x in a:
@@ -27,9 +33,13 @@ def freq(a,b):
         if s not in d1:
             d1[s] = 0
     return [d1,d2]
+#Calculate Frequency of strings function code end
+
+#Main code for checking plagiarism start
 for i in range(0,(len(files)-1)):
     for j in range((i+1),len(files)):
         try:
+            #Calculation for two files at a time
             a = directory[files[i]].split()
             b = directory[files[j]].split()
             s = ""
@@ -45,3 +55,4 @@ for i in range(0,(len(files)-1)):
         except:
             print(files[i]," and ",files[j]," are empty.")
     print()
+#Main code for checking plagiarism end
